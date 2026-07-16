@@ -5,7 +5,7 @@ Ein einfaches CLI-Spiel in JavaScript, bei dem der Benutzer gegen den Computer s
 ## Verwendung
 
 ```bash
-node rock_paper_scissors.js <argument>
+node stein-papier-schere.js <argument>
 ```
 
 ## Mögliche Eingaben
