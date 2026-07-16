@@ -72,7 +72,7 @@ function compareMoves(userMove, computerMove) {
  * Steuert den Programmablauf
  * @param {string[]} args - CL-Argumente
  */
-function run (args) {
+function main (args) {
     const userMove = validateInput(args)
     const computerMove = generateComputerMove(3)
 
@@ -80,4 +80,4 @@ function run (args) {
 }
 
 
-run(args)
+main(args)
