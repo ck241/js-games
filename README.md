@@ -13,3 +13,23 @@ node stein-papier-schere.js <argument>
 - `stein`
 - `papier`
 - `schere`
+
+# [Pig Latin](pig-latin.js)
+
+Ein einfaches CLI-Tool in JavaScript, das einen Text in Pig Latin umwandelt.
+
+## Verwendung
+
+```bash
+node pig-latin.js <argument>
+```
+
+# [Caesar Cipher](caesar-cipher.js)
+
+Ein einfaches CLI-Tool in JavaScript, das einen Text mit dem Caesar-Chiffre verschlüsselt.
+
+## Verwendung
+
+```bash
+node caesar-cipher.js "<argument>" <shift>
+```
