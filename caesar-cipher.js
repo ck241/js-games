@@ -10,6 +10,7 @@ const alphabet = "abcdefghijklmnopqrstuvwxyz";
 /**
  * Validiert die Benutzereingabe
  * @param {string[]} args - CL-Argumente
+ * @returns {{phrase: string, shift: number}} Die validierten Eingabewerte
  * @throws {Error} Beendet das Programm mit einer Fehlermeldung (bei ungültiger Eingabe)
  */
 function validateInput(args) {
@@ -18,6 +19,11 @@ function validateInput(args) {
         console.error('Bitte einen Text und eine Verschiebung übergeben ("<Ein Text>" <Verschiebung>).');
         process.exit(1);
     }
+
+    return {
+        phrase: args[0],
+        shift: parseInt(args[1], 10)
+    };
 }
 
 /**
@@ -39,9 +45,10 @@ function encryptChar(char, shift) {
 
     // überprüft ob der index im alphabet liegt
     // wenn nicht, wird er auf das alphabet zurückgesetzt
-    if (shiftedIndex > 25) {
+    while (shiftedIndex > 25) {
         shiftedIndex -= 26;
-    } else if (shiftedIndex < 0) {
+    }
+    while (shiftedIndex < 0) {
         shiftedIndex += 26;
     }
 
@@ -80,10 +87,8 @@ function encryptPhrase(phrase, shift) {
  * @param {string[]} args - CL-Argumente
  */
 function main(args) {
-    validateInput(args);
+    const { phrase, shift } = validateInput(args);
 
-    const phrase = args[0];
-    const shift = parseInt(args[1], 10);
     const encryptedPhrase = encryptPhrase(phrase, shift);
 
     console.log("Caesar Cipher Verschlüsselung:")
